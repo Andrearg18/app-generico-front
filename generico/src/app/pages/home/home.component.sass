@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Bungee&family=Spicy+Rice&display=swap')
+// font-family: "Bungee", serif
+
 .section 
   flex-grow: 1
 
@@ -8,34 +11,46 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease
     &:hover
         transform: translate(3%, 0%)
-        box-shadow: -24px 0 48px rgba(0, 0, 0, 0.4), -32px 0 64px rgba(0, 0, 0, 0.3), 16px 0 32px rgba(0, 0, 0, 0.1)
+        box-shadow: -24px 0 48px #00000066, -32px 0 64px #0000004d, 16px 0 32px #0000001a
         
+    border-radius: 10px
     padding: 0px
-    color: white
-    font-size: 50px
-    @media ( min-width: 700px )
-        font-size: 6vw !important
-    font-style: italic
-    // font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
-    font-family: cursive
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7)
+    margin: 0px 16px 16px 16px
+    margin-top: 16px
+    color: #ffffff
+    font-size: 45px
+    font-weight: bold
+    letter-spacing: 6px
+    font-family: "Bangers", serif
+    text-shadow: 2px 2px 4px #000000
+    box-shadow: 2px 2px 10px #000000
+
     background-size: cover
     background-position: center
     background-repeat: no-repeat
     //Borrar
     background-color: black 
 
+@media ( min-width: 700px )
+    .section
+        font-size: 7vw !important
+        margin: 0 70px 30px 70px !important
+        letter-spacing: 15px
+    .section-1
+        margin-top: 30px !important
+
+
 //Cambiar fotos
 .section-1
-    background-image: url('../../../assets/img/example-vehicles-1.jpg')
+    background-image: url('../../../assets/img/example-vehicles.jpg')
     &:hover
-        background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent), url('../../../assets/img/example-vehicles-1.jpg')
+        background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent), url('../../../assets/img/example-vehicles.jpg')
 .section-2
-    background-image: url('../../../assets/img/example-recambios-3.jpg')
+    background-image: url('../../../assets/img/example-recambios.jpg')
     &:hover
-        background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent), url('../../../assets/img/example-recambios-3.jpg')
+        background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent), url('../../../assets/img/example-recambios.jpg')
 .section-3
-    background-image: url('../../../assets/img/example-contact-1.jpg')
+    background-image: url('../../../assets/img/example-contact.jpg')
     &:hover
-        background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent), url('../../../assets/img/example-contact-1.jpg')
+        background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent), url('../../../assets/img/example-contact.jpg')
     
