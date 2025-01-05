@@ -1,45 +1,41 @@
-// @import 'node_modules/bulma/bulma'
-.page
-    display: flex
-    justify-content: center
-    //Cambiar color
-    background-color: #181818
-.container-sections
-    margin: 1.5vh
-    margin-top: 8vh
-    background-color: white
-    width: 100%
-    max-width: 1400px
-    height: -webkit-fill-available
-    //--- BORRAR ---
-    border: solid green 1px 
-.container-sections .section 
+.section 
   flex-grow: 1
 
 .section
     display: flex
     align-items: center
     justify-content: center
+    transition: transform 0.3s ease, box-shadow 0.3s ease
     &:hover
-        transform: scale(.95)
+        transform: translate(3%, 0%)
+        box-shadow: -24px 0 48px rgba(0, 0, 0, 0.4), -32px 0 64px rgba(0, 0, 0, 0.3), 16px 0 32px rgba(0, 0, 0, 0.1)
+        
     padding: 0px
     color: white
-    font-size: 60px
+    font-size: 50px
+    @media ( min-width: 700px )
+        font-size: 6vw !important
+    font-style: italic
+    // font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    font-family: cursive
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7)
     background-size: cover
     background-position: center
     background-repeat: no-repeat
-
-    //--- BORRAR ---
-    // border: solid 1px black
+    //Borrar
     background-color: black 
 
-//Agregar fotos
+//Cambiar fotos
 .section-1
-    background-image: url('../../../assets/img/example-car-section.jpg')
+    background-image: url('../../../assets/img/example-vehicles-1.jpg')
+    &:hover
+        background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent), url('../../../assets/img/example-vehicles-1.jpg')
 .section-2
-    background-image: url('../../../assets/img/example-car-section.jpg')
+    background-image: url('../../../assets/img/example-recambios-3.jpg')
+    &:hover
+        background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent), url('../../../assets/img/example-recambios-3.jpg')
 .section-3
-    background-image: url('../../../assets/img/example-car-section.jpg')
-.section-4
-    background-image: url('../../../assets/img/example-car-section.jpg')
+    background-image: url('../../../assets/img/example-contact-1.jpg')
+    &:hover
+        background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent), url('../../../assets/img/example-contact-1.jpg')
     
