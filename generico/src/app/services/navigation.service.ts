@@ -10,8 +10,12 @@ export class NavigationService {
     private _router: Router
   ) { }
 
-  public goToSpareHome() {
-    this._router.navigate(['/home'])
+  public goToHome() {
+    this._router.navigate(['/inicio'])
+  }
+
+  public goToContact() {
+    this._router.navigate(['/contacto']);
   }
 
   public goToVehiculos() {
@@ -19,18 +23,15 @@ export class NavigationService {
   }
 
   public goToVehiculoDetail(code: string) {
-    this._router.navigate(['/vehiculos']);
+    this._router.navigate(['/vehiculos', code]);
   }
 
   public goToRecambios() {
-
+    this._router.navigate(['/recambios']);
   }
 
   public goToRecambioDetail(code: string) {
-
-  }
-
-  public goToContacto() {
+    this._router.navigate(['/recambios', code]);
 
   }
 }
