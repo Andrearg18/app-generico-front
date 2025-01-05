@@ -1,1 +1,60 @@
-<p>contact works!</p>
+<div class="page">
+  <span class="page-title" (click)="goToHome()">J.L COMPETICIÓN</span>
+  <div class="container-page">
+    <mat-icon (click)="goBack()">arrow_back</mat-icon>
+    <div 
+      class="fixed-grid has-1-cols-mobile has-2-cols-tablet has-2-cols-desktop has-2-cols-widescreen has-2-cols-fullhd">
+      <div class="grid">
+        <div class="cell location">
+          <p><b>Langreo, Asturias </b></p>
+          <span class="address">C.P 33900, C/ Torre de Abajo, 56</span>
+        </div>
+        <div class="cell map pointer" (click)="goToMaps()"
+          matTooltip="Abrir en maps" matTooltipPosition="above">
+          <!--<google-map width="100%" height="400px" [center]="center" [zoom]="zoom">
+            <map-marker [position]="markerPosition"></map-marker>
+          </google-map>-->
+        </div>
+      </div>
+    </div>
+    <hr>
+
+    <div 
+      class="fixed-grid has-2-cols">
+      <div class="grid">
+        <span class="cell is-col-span-2 section-title">TELÉFONO</span>
+
+        <div class="cell text-cell pointer" matTooltip="Llamar" matTooltipPosition="above"
+          (click)="goToPhone('633745741')">
+          <mat-icon>phone</mat-icon>
+          <span>633745741</span>
+        </div>
+        <div class="cell text-cell pointer" matTooltip="Llamar" matTooltipPosition="above"
+          (click)="goToPhone('633745741')">
+          <mat-icon>phone</mat-icon>
+          <span>633745741</span>
+        </div>
+      </div>
+    </div>
+    <hr class="show-mobile">
+
+    <div class="fixed-grid has-1-cols-mobile has-2-cols-tablet has-2-cols-desktop has-2-cols-widescreen has-2-cols-fullhd">
+    <div class="grid">
+        <span class="cell is-col-span-2-tablet is-col-span-2-desktop is-col-span-2-widescreen is-col-span-2-fullhd section-title">
+          REDES SOCIALES</span>
+
+        <div class="cell has-text-centered text-cell pointer" (click)="goToEmail('ejemplo.correo@gmail.com')"
+          matTooltip="Enviar correo" matTooltipPosition="above">
+          <mat-icon>email</mat-icon>
+          ejemplo.correo{{ '@gmail' }}.com
+        </div>
+        <div class="cell has-text-centered pointer text-cell" (click)="goToInstagram()"
+          matTooltip="Abrir instagram" matTooltipPosition="above">
+          <mat-icon>share</mat-icon>
+          {{'@'}}jl_competicion
+        </div>
+        <!--https://instagram.com/jl_competicion?igshid=OGQ5ZDc2ODk2ZA==-->
+      </div>
+    </div>
+  </div>
+</div>

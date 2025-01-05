@@ -12,6 +12,7 @@ import { NavigationService } from '../../services/navigation.service';
     CommonModule,
     MatIconModule
   ],
+  
   providers: [NavigationService], 
   exports: [HomeComponent]
 })
