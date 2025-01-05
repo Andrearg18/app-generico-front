@@ -1,5 +1,5 @@
 
-// @import url('https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap')
 // font-family: "Spicy Rice", serif
 .page
     display: flex
@@ -8,14 +8,31 @@
     background-size: cover
     background-position: center
     background-repeat: no-repeat
-    z-index: -1
+
+.page-title
+    position: absolute
+    width: 100%
+    height: 12vh
+    display: flex
+    justify-content: center
+    align-items: center
+
+    color: white
+    text-shadow: 2px 2px 4px #000000
+    font-family: "Bungee", serif
+    font-size: 5vh
+    letter-spacing: 3px
+
+    @media ( min-width: 700px )
+        font-size: 60px !important
+
 .container-page
     border-radius: 10px
     margin: 3vh
     margin-top: 12vh
     background-color: #cacaca
     width: 100%
-    max-width: 1200px
+    max-width: 90vw
     height: -webkit-fill-available
     box-shadow: 0 24px 48px #00000066, 0 32px 64px #0000004d
 
