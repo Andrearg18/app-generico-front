@@ -1,28 +1,21 @@
 .container-page
     height: -webkit-fill-available
-    padding: 2vh
-
-.location
-    text-align: center
-    font-size: 20px
-    
-    @media ( min-width: 1100px )
-        font-size: 40px
-        display: flex
-        flex-direction: column
-        justify-content: center
+    padding: 4vh 2vh 4vh 2vh
 
 .map
     height: 35vh
-    background-position: center
     background-size: 180%
+    background-position: center
+    background-repeat: no-repeat
     background-image: url('../../../assets/img/example-mapa.jpg')
-.icon-change
-    border: solid 1px red
-    position: absolute
-    top: 0
-    left: 100%
-    color: white
+    box-shadow: 2px 2px 4px 2px #00000066
+
+.container-contact
+    position: relative !important
+    background-color: #f5f5f5
+    margin: -10vh 4vw 0 4vw
+    padding: 1.5vh
+    box-shadow: 0 24px 48px #00000066, 0 32px 64px #0000004d
 
 .section-title
     font-size: 25px
@@ -46,7 +39,14 @@ hr
 
 @media ( min-width: 700px )
     .container-page
-        padding: 7vh !important
+        padding: 5vh !important
+    .map
+        background-size: 120%
+        @media ( min-width: 1500px )
+            background-size: 100% !important
+    .container-contact
+        margin: -5vh 10vw 0 10vw
+        padding: 1.5vh 2vh 4vh 2vh !important
     .section-title
         font-size: 30px
     .text-cell

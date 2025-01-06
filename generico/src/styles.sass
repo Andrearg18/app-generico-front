@@ -52,10 +52,15 @@ html
     overflow-y: scroll
 
 .go-back
+    visibility: hidden
+    color: white
     cursor: pointer
-    position: absolute
-    left: 4vh
-    top: 14vh
+    position: absolute       
+    font-size: 40px
+    height: auto !important
+    width: auto !important
+    top: 11vh
+    left: 6vw
 
 @media ( min-width: 700px )
     .page-title
@@ -63,10 +68,9 @@ html
     .container-page
         max-width: 80vw
     .go-back        
-        font-size: 40px
-        height: auto !important
-        width: auto !important
-        left: 10.5vw
+        visibility: visible
+        &:hover
+            transform: scale(1.1)
 
     
 
