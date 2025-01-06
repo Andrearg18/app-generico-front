@@ -29,13 +29,11 @@
         <div class="grid">
           <span class="cell is-col-span-2 section-title">TELÉFONO</span>
 
-          <div class="cell text-cell pointer" matTooltip="Llamar" matTooltipPosition="above"
-            (click)="goToPhone('633745741')">
+          <div class="cell text-cell pointer" (click)="goToPhone('633745741')">
             <mat-icon>phone</mat-icon>
             <span>633745741</span>
           </div>
-          <div class="cell text-cell pointer" matTooltip="Llamar" matTooltipPosition="above"
-            (click)="goToPhone('633745741')">
+          <div class="cell text-cell pointer" (click)="goToPhone('633745741')">
             <mat-icon>phone</mat-icon>
             <span>633745741</span>
           </div>
@@ -43,18 +41,16 @@
       </div>
       <hr class="show-mobile">
 
-      <div class="fixed-grid has-1-cols-mobile has-1-cols-tablet has-1-cols-desktop has-2-cols-widescreen has-2-cols-fullhd">
+      <div class="fixed-grid has-1-cols-mobile has-2-cols-tablet has-2-cols-desktop has-2-cols-widescreen has-2-cols-fullhd">
         <div class="grid">
-          <span class="cell is-col-span-2-widescreen is-col-span-2-fullhd section-title">
+          <span class="cell is-col-span-tablet is-col-span-desktop is-col-span-2-widescreen is-col-span-2-fullhd section-title">
             REDES SOCIALES</span>
 
-          <div class="cell has-text-centered text-cell p-0 pointer" (click)="goToEmail('ejemplo.correo@gmail.com')"
-            matTooltip="Enviar correo" matTooltipPosition="above">
+          <div class="cell text-cell p-0 pointer" (click)="goToEmail('ejemplo.correo@gmail.com')">
             <mat-icon>email</mat-icon>
             ejemplo.correo{{ '@gmail' }}.com
           </div>
-          <div class="cell has-text-centered pointer pr-3 text-cell" (click)="goToInstagram()"
-            matTooltip="Abrir instagram" matTooltipPosition="above">
+          <div class="cell has-text-centered pointer pr-3 text-cell" (click)="goToInstagram()">
             <mat-icon>share</mat-icon>
             {{'@'}}jl_competicion
           </div>

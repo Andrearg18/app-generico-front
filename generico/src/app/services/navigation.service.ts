@@ -23,7 +23,7 @@ export class NavigationService {
   }
 
   public goToVehiculoDetail(code: string) {
-    this._router.navigate(['/vehiculos', code]);
+    this._router.navigate(['/vehiculo', code]);
   }
 
   public goToRecambios() {
