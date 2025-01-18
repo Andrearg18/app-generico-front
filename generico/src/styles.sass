@@ -53,14 +53,17 @@ html
 
 .go-back
     visibility: hidden
-    color: white
+    color: gray
     cursor: pointer
     position: absolute       
-    font-size: 40px
+    font-size: 25px
     height: auto !important
     width: auto !important
-    top: 11vh
-    left: 6vw
+    // top: 4.5vh
+    // left: 2vw
+    &:hover
+        transform: scale(1.1)
+        color: #4b4b4b
 
 @media ( min-width: 700px )
     .page-title
@@ -68,9 +71,10 @@ html
     .container-page
         max-width: 80vw
     .go-back        
-        visibility: visible
-        &:hover
-            transform: scale(1.1)
+        visibility: visible    
+        font-size: 35px
+        top: 12.5vh
+        left: 10.2vw
 
     
 
