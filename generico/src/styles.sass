@@ -4,7 +4,9 @@ html
     overflow: hidden !important
 
 ::-webkit-scrollbar 
-    width: 12px
+    border-bottom-right-radius: 100px
+    background-color: #b6b6b6
+    width: 5px
 ::-webkit-scrollbar-thumb 
     background: #00000065
     border-radius: 10px
@@ -17,7 +19,7 @@ html
 .page
     display: flex
     justify-content: center
-    background-image: url('./app/shared/img/fondo.jpg')
+    background-image: url('./assets/img/fondo.jpg')
     background-size: cover
     background-position: center
     background-repeat: no-repeat
@@ -40,7 +42,7 @@ html
 
 .container-page
     border-radius: 10px
-    margin: 3vh
+    margin: 1.5vh
     margin-top: 12vh
     background-color: #cacaca
     width: 100%
@@ -48,35 +50,48 @@ html
     // height: -webkit-fill-available
     height: 100%
     box-shadow: 0 24px 48px #00000066, 0 32px 64px #0000004d
-    overflow-x: hidden
-    overflow-y: scroll
+    // overflow-x: hidden
+    // overflow-y: scroll
 
 .go-back
     visibility: hidden
     color: gray
     cursor: pointer
-    position: absolute       
+    position: relative     
+    top: 5px
+    left: 5px  
     font-size: 25px
     height: auto !important
     width: auto !important
-    // top: 4.5vh
-    // left: 2vw
     &:hover
         transform: scale(1.1)
         color: #4b4b4b
 
 @media ( min-width: 700px )
+    ::-webkit-scrollbar 
+        width: 12px
     .page-title
         font-size: 60px !important
     .container-page
         max-width: 80vw
     .go-back        
         visibility: visible    
-        font-size: 35px
-        top: 12.5vh
-        left: 10.2vw
-
-    
+    .footer
+        margin: 0 -40px 0 -40px
+    .no-data-footer
+        width: 80vw
+        bottom: 30px
 
 .pointer
     cursor: pointer
+
+.no-data
+    display: flex
+    justify-content: center
+    color: gray
+
+.spinner
+    display: flex
+    justify-content: center
+    .mat-mdc-progress-spinner .mdc-circular-progress__determinate-circle, .mat-mdc-progress-spinner .mdc-circular-progress__indeterminate-circle-graphic 
+        stroke: #bdbdbd !important

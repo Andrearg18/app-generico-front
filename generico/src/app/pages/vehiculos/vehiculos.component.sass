@@ -1,10 +1,39 @@
+.go-back      
+    visibility: visible !important
+    
 .height-page
     height: -webkit-fill-available
-    padding: 4vh 2vh 4vh 2vh
 
-.container-page
-    padding: 7vh 1vw 0 1vw
+.header
+    border-top-right-radius: 10px
+    border-top-left-radius: 10px
+    width: 100%
+    height: 40px
+    background-color: #d4d4d5
 
+.vehiculos
+    border-radius: 10px 
+    height: calc( 100% - 40px )
+    padding: 10px 7px 10px 10px !important
+    width: 100%
+    overflow-y: auto !important
+    overflow-x: hidden !important
 .vehiculo
-    margin-bottom: 20px
     border-radius: 10px
+
+app-item-vehiculo
+    height: 100%
+
+.hr-card
+    margin-top: 24px
+    margin-bottom: 16px
+
+@media ( min-width: 700px )
+    .vehiculos
+        height: calc( 100% - 50px )
+        padding: 20px 30px 0 30px !important
+    .header
+        height: 50px
+    .hr-card
+        margin-bottom: 24px
+        

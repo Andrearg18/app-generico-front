@@ -16,7 +16,8 @@ export interface Vehiculo {
     titulo?: string,
     descripcion?: string,
     precio?: number,
-    foto?: string,
+    principalFoto?: string,
+    fotos?: string[],
 }
 
 export interface Motor {

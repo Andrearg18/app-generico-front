@@ -11,6 +11,5 @@ import { Vehiculo } from '../../../models/vehiculo';
 export class ItemVehiculoComponent {
   @Input() vehiculo?: Vehiculo
 
-  constructor() { }
-
+  constructor() {}
 }

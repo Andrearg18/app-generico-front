@@ -1,9 +1,30 @@
 <div class="page">
-    <span class="page-title" (click)="goToHome()">J.L COMPETICIÓN</span>
-    <mat-icon class="go-back" (click)="goBack()">arrow_back</mat-icon>
-    <div class="container-page" [ngClass]="{'height-page': vehiculosList.length < 4}">
-      <div class="vehiculo" *ngFor="let vehiculo of vehiculosList" (click)="goToVehiculoDetail(vehiculo.code)">
-        <app-item-vehiculo [vehiculo]="vehiculo"></app-item-vehiculo>
+  <span class="page-title" (click)="goToHome()">J.L COMPETICIÓN</span>
+
+  <div class="container-page" [ngClass]="{'height-page': vehiculosList.length < 4}">
+    <div class="header">
+      <mat-icon class="go-back" (click)="goBack()">arrow_back</mat-icon>
+    </div>
+    
+    <div class="vehiculos">
+      <div *ngIf="loading" class="spinner">
+        <mat-progress-spinner mode="indeterminate" diameter="50" strokeWidth="10"></mat-progress-spinner>
+      </div>
+
+      <ng-container *ngIf="!loading && vehiculosList.length > 0; else noVehiculos">
+        <div class="vehiculo" *ngFor="let vehiculo of vehiculosList" (click)="goToVehiculoDetail(vehiculo.code)">
+          <app-item-vehiculo [vehiculo]="vehiculo"></app-item-vehiculo>
+          <hr class="hr-card">
+        </div>
+      </ng-container>
+
+      <ng-template #noVehiculos>
+        <span class="no-data"> No hay vehículos </span>
+      </ng-template>
+
+      <div class="footer" [ngClass]="{'no-data-footer': vehiculosList.length == 0}">
+  
       </div>
     </div>
   </div>
+</div>

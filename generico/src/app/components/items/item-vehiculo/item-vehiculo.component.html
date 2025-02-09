@@ -1,1 +1,29 @@
-<p>item-vehiculo works!</p>
+
+<div *ngIf="vehiculo" class="card pointer fixed-grid has-3-cols">
+    <div class="grid">
+        <div class="cell">
+            <img class="foto" [src]="'assets/img/coches/' + vehiculo.principalFoto">
+        </div>
+        <div class="cell is-col-span-2 is-flex is-align-items-center">
+            <div class="fixed-grid has-4-cols data">
+                <div class="grid">
+                    <div class="cell is-col-span-4">
+                        <h3 class="has-text-weight-bold">{{vehiculo.titulo}}</h3>
+                    </div>
+                    <div class="cell">
+                        <span>Año {{vehiculo.anio}}</span>
+                    </div>
+                    <div class="cell">
+                        <span>{{vehiculo.km}} Km</span>
+                    </div>
+                    <div class="cell">
+                        <span>{{vehiculo.combustible}}</span>
+                    </div>
+                    <div class="cell">
+                        <span>{{vehiculo.cv}} CV</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

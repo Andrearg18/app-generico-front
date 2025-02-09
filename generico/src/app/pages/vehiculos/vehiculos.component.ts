@@ -11,6 +11,7 @@ import { VehiculosService } from '../../services/vehiculos.service';
 })
 export class VehiculosComponent implements OnInit {
   vehiculosList: Vehiculo[] = []
+  loading = true
   
   constructor(
     private _navigationService: NavigationService,
@@ -35,5 +36,6 @@ export class VehiculosComponent implements OnInit {
 
   private _readVehiculos() {
     this.vehiculosList = this._vehiculosService.getVehiculosList()
+    this.loading = false
   }
 }
