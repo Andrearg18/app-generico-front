@@ -18,7 +18,7 @@ export class VehiculosService {
     //Leer fichero shared/data-list/vehiculos-list
     //Buscar el vehiculo por code
     
-    return { code: '0'}
+    return { code: '0', titulo: '', descripcion: ''}
   }
 
   public updateVehiculo(code: string): boolean {

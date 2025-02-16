@@ -11,31 +11,53 @@ import { VehiculosService } from '../../services/vehiculos.service';
 })
 export class VehiculosComponent implements OnInit {
   vehiculosList: Vehiculo[] = []
+  vehiculosFiltered: Vehiculo[] = []
   loading = true
+  searchText!: string
   
   constructor(
     private _navigationService: NavigationService,
     private _vehiculosService: VehiculosService
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this._readVehiculos()
   }
 
-  goToHome() {
+  goToHome(): void {
     this._navigationService.goToHome()
   }
 
-  goBack() {
+  goBack(): void {
     this._navigationService.goBack()
   }
 
-  goToVehiculoDetail(code: string) {
+  search(filter?: any): void {
+    this.loading = true
+    if(filter) {
+      this.loading = false
+    } else {
+      this.vehiculosFiltered = this.searchText 
+      ? this.vehiculosList.filter(vehiculo => 
+        vehiculo.titulo.toUpperCase().includes(this.searchText.toUpperCase())
+        || vehiculo.descripcion.toUpperCase().includes(this.searchText.toUpperCase())
+      )
+      : this.vehiculosList
+    }
+    this.loading = false
+  }
+
+  goToVehiculoDetail(code: string): void {
     this._navigationService.goToVehiculoDetail(code)
   }
 
   private _readVehiculos() {
     this.vehiculosList = this._vehiculosService.getVehiculosList()
-    this.loading = false
+    this.vehiculosFiltered = this.vehiculosList
+    if (this.searchText) {
+      this.search()
+    } else {
+      this.loading = false
+    }
   }
 }

@@ -2,8 +2,24 @@
   <span class="page-title" (click)="goToHome()">J.L COMPETICIÓN</span>
 
   <div class="container-page" [ngClass]="{'height-page': vehiculosList.length < 4}">
-    <div class="header">
-      <mat-icon class="go-back" (click)="goBack()">arrow_back</mat-icon>
+    <div class="header fixed-grid has-3-cols">
+      <div class="grid">
+        <div class="cell go-back">
+          <mat-icon class="pointer" (click)="goBack()">arrow_back</mat-icon>
+        </div>
+
+        <div class="cell finder">
+          <mat-icon class="pointer">search</mat-icon>
+          <input [(ngModel)]="searchText" (input)="search()"/>
+        </div>
+
+        <div class="cell btn-filter">
+          <button>
+            <span class="text-button">Filtrar</span>
+            <mat-icon>filter_list</mat-icon>
+          </button>
+        </div>
+      </div>
     </div>
     
     <div class="vehiculos">
@@ -11,8 +27,8 @@
         <mat-progress-spinner mode="indeterminate" diameter="50" strokeWidth="10"></mat-progress-spinner>
       </div>
 
-      <ng-container *ngIf="!loading && vehiculosList.length > 0; else noVehiculos">
-        <div class="vehiculo" *ngFor="let vehiculo of vehiculosList" (click)="goToVehiculoDetail(vehiculo.code)">
+      <ng-container *ngIf="!loading && vehiculosFiltered.length > 0; else noVehiculos">
+        <div class="vehiculo" *ngFor="let vehiculo of vehiculosFiltered" (click)="goToVehiculoDetail(vehiculo.code)">
           <app-item-vehiculo [vehiculo]="vehiculo"></app-item-vehiculo>
           <hr class="hr-card">
         </div>
@@ -22,8 +38,31 @@
         <span class="no-data"> No hay vehículos </span>
       </ng-template>
 
-      <div class="footer" [ngClass]="{'no-data-footer': vehiculosList.length == 0}">
-  
+      <div class="footer-custom">
+        <div class="fixed-grid has-3-cols">
+          <div class="grid">
+            <div class="cell">
+              <mat-icon>phone</mat-icon>
+              <span>633745741</span>
+            </div>
+            <div class="cell">
+              <mat-icon>share</mat-icon>
+              <span>{{'@'}}jl_competicion</span>
+            </div>
+            <div class="cell">
+              <mat-icon>share</mat-icon>
+              <span>{{'@'}}jl_competicion</span>
+            </div>
+            <div class="cell">
+              <mat-icon>phone</mat-icon>
+              <span>633745741</span>
+            </div>
+            <div class="cell is-col-span-2">
+              <mat-icon>email</mat-icon>
+              <span>ejemplo.correo{{ '@gmail' }}.com</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

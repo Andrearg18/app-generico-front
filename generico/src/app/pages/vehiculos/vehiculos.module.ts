@@ -4,6 +4,7 @@ import { VehiculosComponent } from './vehiculos.component';
 import { MatIconModule } from '@angular/material/icon';
 import { ItemsModule } from '../../components/items/items.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { FormsModule } from '@angular/forms';
 
 
 const ANGULAR_MATERIAL = [
@@ -21,6 +22,7 @@ const ANGULAR_MATERIAL = [
     ANGULAR_MATERIAL,
     CommonModule,
     ItemsModule,
+    FormsModule
   ]
 })
 export class VehiculosModule { }
