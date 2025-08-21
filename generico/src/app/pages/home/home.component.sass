@@ -1,74 +1,156 @@
 
-.container-page
-    height: -webkit-fill-available
-    overflow: hidden
+// .container-page
+//     height: -webkit-fill-available
+//     overflow: hidden
     
-.section 
-    flex-grow: 1
+// .custom-section 
+//     flex-grow: 1
 
-mat-icon
-    opacity: 0
-    font-size: 70px
-    width: auto
-    height: auto
-    position: fixed
-    left: -20px
+// mat-icon
+//     opacity: 0
+//     font-size: 70px
+//     width: auto
+//     height: auto
+//     position: fixed
+//     left: -20px
     
-.section
-    display: flex
-    align-items: center
-    justify-content: center
-    transition: transform 0.3s ease, box-shadow 0.3s ease
+// .custom-section
+//     display: flex
+//     align-items: center
+//     justify-content: center
+//     transition: transform 0.3s ease, box-shadow 0.3s ease
         
-    border-radius: 10px
-    padding: 0px
-    margin: 0 4vw 3vh 4vw
+//     border-radius: 10px
+//     padding: 0px
+//     margin: 0 4vw 3vh 4vw
 
-    color: #ffffff
-    font-size: 40px
-    font-weight: bold
-    letter-spacing: 6px
-    font-family: "Bangers", serif
-    text-shadow: 2px 2px 4px #000000
+//     color: #ffffff
+//     font-size: 40px
+//     font-weight: bold
+//     letter-spacing: 6px
+//     font-family: "Bangers", serif
+//     text-shadow: 2px 2px 4px #000000
 
-    box-shadow: 2px 2px 10px #000000
-    background-size: cover
-    background-position: center
-    background-repeat: no-repeat
+//     box-shadow: 2px 2px 10px #000000
+//     background-size: cover
+//     background-position: center
+//     background-repeat: no-repeat
     
-    &:hover
-        color: #ffffffb4
-        transform: translate(3%, 0%)
-        box-shadow: -24px 0 48px #00000066, -32px 0 64px #0000004d, 16px 0 32px #0000001a
+//     &:hover
+//         color: #ffffffb4
+//         transform: translate(3%, 0%)
+//         box-shadow: -24px 0 48px #00000066, -32px 0 64px #0000004d, 16px 0 32px #0000001a
+//         mat-icon
+//             opacity: .5
+//             transition: opacity .2s ease-in-out
+//     //Borrar
+//     background-color: black 
+
+// .custom-section-1
+//     margin-top: 3vh
+
+// @media ( min-width: 700px )
+//     .custom-section
+//         font-size: 4vw !important
+//         margin: 0 3vw 3vh 3vw !important
+//         letter-spacing: 15px
+//     .custom-section-1
+//         margin-top: 3vh !important
+
+
+// //Cambiar fotos
+// .custom-section-1
+//     background-image: url('../../../assets/img/example-vehicles.jpg')
+//     &:hover
+//         background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent), url('../../../assets/img/example-vehicles.jpg')
+// .custom-section-2
+//     background-image: url('../../../assets/img/example-recambios.jpg')
+//     &:hover
+//         background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent), url('../../../assets/img/example-recambios.jpg')
+// .custom-section-3
+//     background-image: url('../../../assets/img/example-contact.jpg')
+//     &:hover
+//         background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent), url('../../../assets/img/example-contact.jpg')
+ 
+
+.home-title
+    color: white
+    display: flex
+    justify-content: center
+    flex-direction: column
+    align-items: center
+    height: 90%
+    text-align: center
+    span:first-child
+        font-weight: bold
+        text-shadow: 5px 0 10px #575757
+        font-size: 80px
+    span:second-child
+        font-size: 20px
+
+.container-page
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4), 0 32px 64px rgba(0, 0, 0, 0.3019607843)
+    background-color: white
+    position: absolute
+    border-radius: 3vh
+    bottom: 1.5vh
+    height: auto
+    min-height: 8vh  
+
+.custom-grid
+    display: grid
+    grid-column-template: repeat(1, 1fr)
+    padding: 10px !important
+    gap: 30px
+
+    .custom-cell
+        display: flex
+        align-items: center
+        cursor: pointer
         mat-icon
-            opacity: .5
-            transition: opacity .2s ease-in-out
-    //Borrar
-    background-color: black 
+            border-radius: 50%
+            margin-right: 10px
+            background: #404654
+            color: white
+            width: 40px
+            height: 40px
+            display: flex
+            justify-content: center
+            align-items: center
+        span
+            font-size: 40px
+            // font-family: "Bangers", serif
+            padding-bottom: 3px
+            color: #404654
+        &:hover
+            transform: scale(1.05)
+            mat-icon
+                background: black
+            span
+                color: black
 
-.section-1
-    margin-top: 3vh
+@media (min-width: 1050px)
+    .home-title
+        justify-content: center
+    .custom-grid
+        grid-template-columns: repeat(3, 1fr)
+        padding: 0 50px !important
+        .cell-2
+            justify-content: center
+        .cell-3
+            justify-content: end
 
-@media ( min-width: 700px )
-    .section
-        font-size: 4vw !important
-        margin: 0 3vw 3vh 3vw !important
-        letter-spacing: 15px
-    .section-1
-        margin-top: 3vh !important
+// garage
+// motorcycle
+// time_to_leave
 
+// hardware
+// handyman
+// construction
+// precision_manufacturing
+// build
+// settings
 
-//Cambiar fotos
-.section-1
-    background-image: url('../../../assets/img/example-vehicles.jpg')
-    &:hover
-        background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent), url('../../../assets/img/example-vehicles.jpg')
-.section-2
-    background-image: url('../../../assets/img/example-recambios.jpg')
-    &:hover
-        background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent), url('../../../assets/img/example-recambios.jpg')
-.section-3
-    background-image: url('../../../assets/img/example-contact.jpg')
-    &:hover
-        background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent), url('../../../assets/img/example-contact.jpg')
-    
+// support_agent
+// chat
+// forum

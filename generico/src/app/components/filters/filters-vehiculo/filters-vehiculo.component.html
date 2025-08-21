@@ -1,0 +1,30 @@
+<div>
+    <form [formGroup]="filtersForm">
+        <!-- Tipo de vehiculo -->
+        <mat-label>Tipo de vehículo</mat-label>
+        <div formGroupName="tipo">
+            <mat-checkbox formControlName="coche">Coche</mat-checkbox>
+            <mat-checkbox formControlName="moto">Moto</mat-checkbox>
+        </div>
+        <!-- <mat-radio-group formControlName="tipo">
+          <mat-radio-button value="coche">Coche</mat-radio-button>
+        </mat-radio-group> -->
+
+        <!-- Marca -->
+        <mat-label>Marca</mat-label>
+        <div formGroupName="marca">
+            <mat-checkbox *ngFor="let marca of getMarcas()" 
+                [formControlName]="marca">{{ marca }}</mat-checkbox>
+        </div>
+      
+        <!-- <mat-form-field>
+          <mat-label>Marca</mat-label>
+          <mat-select formControlName="marca">
+            <mat-option value="ford">Ford</mat-option>
+            <mat-option value="toyota">Toyota</mat-option>
+          </mat-select>
+        </mat-form-field> -->
+      
+        <button mat-button mat-dialog-close (click)="applyFiltros()">Aplicar</button>
+    </form>
+</div>

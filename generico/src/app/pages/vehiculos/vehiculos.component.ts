@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationService } from '../../services/navigation.service';
 import { Vehiculo } from '../../models/vehiculo';
 import { VehiculosService } from '../../services/vehiculos.service';
+import { MatDialog } from '@angular/material/dialog';
+import { FiltersVehiculoComponent } from '../../components/filters/filters-vehiculo/filters-vehiculo.component';
+import { Filter } from '../../services/vehiculos-filters.service';
 
 @Component({
   selector: 'app-vehiculos',
@@ -17,7 +20,8 @@ export class VehiculosComponent implements OnInit {
   
   constructor(
     private _navigationService: NavigationService,
-    private _vehiculosService: VehiculosService
+    private _vehiculosService: VehiculosService,
+    private _dialogFilters: MatDialog,
   ) { }
 
   ngOnInit(): void {
@@ -30,6 +34,21 @@ export class VehiculosComponent implements OnInit {
 
   goBack(): void {
     this._navigationService.goBack()
+  }
+
+  openFilterPopup(): void {
+    const dialogRef = this._dialogFilters.open(FiltersVehiculoComponent, {
+      width: '450px',
+      disableClose: true,
+      autoFocus: true,
+      panelClass: 'static-size-dialog',
+    })
+
+    dialogRef.afterClosed().subscribe(filters => {
+      if(filters) {
+        this._applyFilters(filters)
+      }
+    }) 
   }
 
   search(filter?: any): void {
@@ -59,5 +78,9 @@ export class VehiculosComponent implements OnInit {
     } else {
       this.loading = false
     }
+  }
+
+  private _applyFilters(filters: Filter[]): void {
+    console.log(filters)
   }
 }

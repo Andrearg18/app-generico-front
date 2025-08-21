@@ -30,3 +30,15 @@ export interface Motor {
     tamano?: string,
     peso?: number
 }
+
+// export interface CombustibleType {
+//     code?: string,
+//     nombre?: string,
+//     tipo?: string,
+// }
+
+// export interface VehiculoType {
+//     code?: string,
+//     nombre?: string,
+//     tipo?: string,
+// }

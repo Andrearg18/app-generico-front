@@ -8,11 +8,24 @@ import { VehiculosModule } from './pages/vehiculos/vehiculos.module';
 import { RecambiosModule } from './pages/recambios/recambios.module';
 import { VehiculoDetailModule } from './components/vehiculo-detail/vehiculo-detail.module';
 import { RecambioDetailModule } from './components/recambio-detail/recambio-detail.module';
+import { FiltersVehiculoComponent } from './components/filters/filters-vehiculo/filters-vehiculo.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
 
+const ANGULAR_MATEIRAL =[
+  MatFormFieldModule,
+  MatInputModule,
+  MatButtonModule,
+  MatSelectModule
+]
 
 @NgModule({
   declarations: [
     AppComponent,
+    FiltersVehiculoComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,6 +36,8 @@ import { RecambioDetailModule } from './components/recambio-detail/recambio-deta
     RecambiosModule,
     VehiculoDetailModule,
     RecambioDetailModule,
+    ReactiveFormsModule,
+    ANGULAR_MATEIRAL,
   ],
   providers: [],
   bootstrap: [AppComponent]

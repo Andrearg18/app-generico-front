@@ -1,17 +1,23 @@
-<div class="page">
-  <span class="page-title">J.L COMPETICIÓN</span>
-  <div class="is-flex is-flex-direction-column container-page">
-    <div class="pointer section section-1" (click)="goToVehiculos()">
-      <mat-icon>forward</mat-icon>
-      <span>Vehículos</span>
+<div class="wrapper">
+  <div class="page">
+    <div class="home-title">
+      <span>J.L COMPETICIÓN</span>
+      <span>Tienda de recambios y accesorios para vehículos</span>
     </div>
-    <div class="pointer section section-2" (click)="goToRecambios()">
-      <mat-icon>forward</mat-icon>
-      <span>Recambios</span>
-    </div>
-    <div class="pointer section section-3" (click)="goToContact()"> 
-      <mat-icon>forward</mat-icon>
-      <span>Contacto</span>
+
+    <div class="custom-grid container-page">
+      <div class="custom-cell" (click)="goToVehiculos()">
+        <mat-icon>time_to_leave</mat-icon>
+        <span>Vehículos</span>
+      </div>
+      <div class="custom-cell cell-2" (click)="goToRecambios()">
+        <mat-icon>hardware</mat-icon>
+        <span>Recambios</span>
+      </div>
+      <div class="custom-cell cell-3" (click)="goToContact()"> 
+        <mat-icon>support_agent</mat-icon>
+        <span>Contacto</span>
+      </div>
     </div>
   </div>
 </div>
