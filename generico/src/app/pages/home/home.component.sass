@@ -1,77 +1,6 @@
-
-// .container-page
-//     height: -webkit-fill-available
-//     overflow: hidden
-    
-// .custom-section 
-//     flex-grow: 1
-
-// mat-icon
-//     opacity: 0
-//     font-size: 70px
-//     width: auto
-//     height: auto
-//     position: fixed
-//     left: -20px
-    
-// .custom-section
-//     display: flex
-//     align-items: center
-//     justify-content: center
-//     transition: transform 0.3s ease, box-shadow 0.3s ease
-        
-//     border-radius: 10px
-//     padding: 0px
-//     margin: 0 4vw 3vh 4vw
-
-//     color: #ffffff
-//     font-size: 40px
-//     font-weight: bold
-//     letter-spacing: 6px
-//     font-family: "Bangers", serif
-//     text-shadow: 2px 2px 4px #000000
-
-//     box-shadow: 2px 2px 10px #000000
-//     background-size: cover
-//     background-position: center
-//     background-repeat: no-repeat
-    
-//     &:hover
-//         color: #ffffffb4
-//         transform: translate(3%, 0%)
-//         box-shadow: -24px 0 48px #00000066, -32px 0 64px #0000004d, 16px 0 32px #0000001a
-//         mat-icon
-//             opacity: .5
-//             transition: opacity .2s ease-in-out
-//     //Borrar
-//     background-color: black 
-
-// .custom-section-1
-//     margin-top: 3vh
-
-// @media ( min-width: 700px )
-//     .custom-section
-//         font-size: 4vw !important
-//         margin: 0 3vw 3vh 3vw !important
-//         letter-spacing: 15px
-//     .custom-section-1
-//         margin-top: 3vh !important
-
-
-// //Cambiar fotos
-// .custom-section-1
-//     background-image: url('../../../assets/img/example-vehicles.jpg')
-//     &:hover
-//         background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent), url('../../../assets/img/example-vehicles.jpg')
-// .custom-section-2
-//     background-image: url('../../../assets/img/example-recambios.jpg')
-//     &:hover
-//         background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent), url('../../../assets/img/example-recambios.jpg')
-// .custom-section-3
-//     background-image: url('../../../assets/img/example-contact.jpg')
-//     &:hover
-//         background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent), url('../../../assets/img/example-contact.jpg')
- 
+page
+    display: grid
+    flex-direction: column
 
 .home-title
     color: white
@@ -79,31 +8,30 @@
     justify-content: center
     flex-direction: column
     align-items: center
-    height: 90%
     text-align: center
-    span:first-child
+    span:nth-child(1)
         font-weight: bold
         text-shadow: 5px 0 10px #575757
-        font-size: 80px
-    span:second-child
-        font-size: 20px
+        font-size: clamp(2rem, 8vw, 6rem)
+    span:nth-child(2)
+        font-size: 3vw
+        font-size: clamp(.7rem, 3vw, 2rem)
 
-.container-page
-    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4), 0 32px 64px rgba(0, 0, 0, 0.3019607843)
-    background-color: white
-    position: absolute
-    border-radius: 3vh
-    bottom: 1.5vh
-    height: auto
-    min-height: 8vh  
 
-.custom-grid
+.custom-grid-options
     display: grid
     grid-column-template: repeat(1, 1fr)
-    padding: 10px !important
     gap: 30px
+    justify-content: center
+    padding: 20px !important
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4), 0 32px 64px rgba(0, 0, 0, 0.3019607843)
+    background-color: white
+    border-radius: 3vh
+    height: fit-content
+    min-width: 80vw
+    max-width: 97vw
 
-    .custom-cell
+    div
         display: flex
         align-items: center
         cursor: pointer
@@ -129,28 +57,18 @@
             span
                 color: black
 
-@media (min-width: 1050px)
+@media (min-width: 900px)
+    .custom-is-align-items-end
+        align-items: end !important
     .home-title
-        justify-content: center
-    .custom-grid
+        justify-content: end
+    .custom-grid-options
         grid-template-columns: repeat(3, 1fr)
-        padding: 0 50px !important
-        .cell-2
+        padding: 0 40px !important
+        min-height: 8vh  
+        position: relative
+        bottom: -35px
+        div:nth-child(2)
             justify-content: center
-        .cell-3
+        div:nth-child(3)
             justify-content: end
-
-// garage
-// motorcycle
-// time_to_leave
-
-// hardware
-// handyman
-// construction
-// precision_manufacturing
-// build
-// settings
-
-// support_agent
-// chat
-// forum
