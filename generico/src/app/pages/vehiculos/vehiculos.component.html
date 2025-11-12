@@ -1,6 +1,12 @@
 <div class="wrapper">
   <div class="page">
-    <span class="page-title" (click)="goToHome()">J.L COMPETICIÓN</span>
+    <!-- <span class="page-header" (click)="goToHome()">J.L COMPETICIÓN</span> -->
+
+    <!-- <Header> -->
+    <div class="page-header" (click)="goToHome()">
+      <mat-icon class="go-back" (click)="goBack()">arrow_back</mat-icon>
+      <span>J.L COMPETICIÓN</span>
+    </div>
 
     <div class="container-page" [ngClass]="{'height-page': vehiculosList.length < 4}">
       <div class="header fixed-grid has-3-cols">

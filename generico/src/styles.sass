@@ -15,66 +15,58 @@ html
 ::-webkit-scrollbar-track
     margin: 20px 0 20px 0
 
-.wrapper 
-    background: #e7e7e7
-    padding: 1.5vh 1.5vh 7vh 1.5vh
-    height: 100vh
-    box-sizing: border-box
+// .header
+//     margin: 0 !important
+//     border-top-right-radius: 5px
+//     border-top-left-radius: 5px
+//     padding: 5px
+//     height: 40px
+//     background-color: #d4d4d5
+//     .finder
+//         min-width: 300px
+//         input
+//             width: 100%
+//             height: 22px
+//             border-radius: 10px
+//             border: solid 1px #b6b6b6
+//             padding: 0 10px 3px 10px
+//             background-color: #f0f0f0 !important
+//             font-size: 14px
+//     .btn-filter 
+//         justify-content: end
+//         button
+//             height: 25px !important
+//             border-radius: 10px
+//             padding: 0 10px 0 10px
+//             justify-content: center
+//             box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6)
+//             mat-icon
+//                 font-weight: bold
+//             &:hover
+//                 transform: scale(1.05)
+    // .finder, .go-back, .btn-filter, .btn-filter button
+    //     display: flex
+    //     align-items: center
+    //     height: 30px
+    // .go-back mat-icon, .finder mat-icon
+    //     &:hover
+    //         color: #4b4b4b
 
-.page
-    display: flex
-    justify-content: center
-    background-image: url('./assets/img/fondo.jpg')
-    background-size: cover
-    background-position: center
-    background-repeat: no-repeat
-    height: 100%
-    border-radius: 2vh
-
-.header
-    margin: 0 !important
-    border-top-right-radius: 5px
-    border-top-left-radius: 5px
-    padding: 5px
-    height: 40px
-    background-color: #d4d4d5
-    .finder
-        min-width: 300px
-        input
-            width: 100%
-            height: 22px
-            border-radius: 10px
-            border: solid 1px #b6b6b6
-            padding: 0 10px 3px 10px
-            background-color: #f0f0f0 !important
-            font-size: 14px
-    .btn-filter 
-        justify-content: end
-        button
-            height: 25px !important
-            border-radius: 10px
-            padding: 0 10px 0 10px
-            justify-content: center
-            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6)
-            mat-icon
-                font-weight: bold
-            &:hover
-                transform: scale(1.05)
-    .finder, .go-back, .btn-filter, .btn-filter button
-        display: flex
-        align-items: center
-        height: 30px
-    .go-back mat-icon, .finder mat-icon
+.page-header
+    .go-back
+        margin-right: 8px
         &:hover
             color: #4b4b4b
-
 
 .no-data
     height: 82%
     display: flex
     justify-content: center
+
 .go-back, .finder input, .finder mat-icon, .no-data, .btn-filter * 
-    color: gray
+    color: #a8a8a8
+    :hover
+        color: #4b4b4b
 
 .footer-custom
     height: 20%
@@ -95,7 +87,7 @@ html
         margin: 0 3px -4px 5px
         font-size: 18px
    
-.pointer
+.pointer, .page-header
     cursor: pointer
 
 .spinner
@@ -110,7 +102,7 @@ html
 @media ( min-width: 700px )
     ::-webkit-scrollbar 
         width: 12px
-    .page-title
+    .page-header
         font-size: 60px !important
     // .container-page
     //     max-width: 80vw
@@ -127,3 +119,9 @@ html
 //------------
 .height100 
     height: 100% !important
+
+
+
+.mat-mdc-text-field-wrapper
+  padding-bottom: 0px
+  padding-top: 0px

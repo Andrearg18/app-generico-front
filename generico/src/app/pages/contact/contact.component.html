@@ -1,64 +1,154 @@
 <div class="wrapper">
   <div class="page">
-    <span class="page-title" (click)="goToHome()">J.L COMPETICIÓN</span>
-    <div class="container-page">
+
+    <!-- <Header> -->
+    <div class="page-header" (click)="goToHome()">
       <mat-icon class="go-back" (click)="goBack()">arrow_back</mat-icon>
-      <div 
-        class="fixed-grid has-1-cols">
-        <div class="grid">
-          <div class="cell map pointer" (click)="goToMaps()"
-            matTooltip="Abrir en maps" matTooltipPosition="above">
+      <span>J.L COMPETICIÓN</span>
+    </div>
+
+    <!-- <Principal grid> -->
+    <div class="custom-grid-sections">
+      <!-- Data grid -->
+      <div class="padding-section">
+        <div class="custom-grid-data">
+          <span class="custom-cell section-title">TELÉFONOS</span>
+
+          <div class="custom-cell pointer" (click)="goToPhone('684629261')">
+            <mat-icon>phone</mat-icon>
+            <span>684629261</span>
+          </div>
+
+          <div class="custom-cell pointer" (click)="goToPhone('684629261')">
+            <mat-icon>phone</mat-icon>
+            <span>684629261</span>
+          </div>
+
+          <span class="custom-cell section-title">
+            REDES SOCIALES</span>
+      
+          <div class="custom-cell cols-email pointer" (click)="goToEmail('ejemplo.correo@gmail.com')">
+            <mat-icon>email</mat-icon>
+            <span>ejemplo.correo{{ '@gmail' }}.com</span>
+          </div>
+
+          <div class="custom-cell cols-email pointer" (click)="goToInstagram()">
+            <mat-icon>share</mat-icon>
+            <span>{{'@'}}jl_competicion</span>
+          </div>
+
+          <div class="custom-cell">
+            <p><i><b>Langreo, Asturias</b></i></p>
+            <p><i>C.P 33900, C/ Torre de Abajo, 56</i></p>
+          </div>
+          
+          <div class="custom-cell custom-map" (click)="goToMaps()"
+            matTooltip="Abrir en google maps" matTooltipPosition="below">
             <!--<google-map width="100%" height="400px" [center]="center" [zoom]="zoom">
               <map-marker [position]="markerPosition"></map-marker>
             </google-map>-->
           </div>
         </div>
       </div>
-
-      <div class="container-contact">
+      
+      <!-- <Message grid> -->
+      <div class="padding-section">
+        <form [formGroup]="contactForm" class="custom-grid-message">
+          <!-- Contact title -->
+          <div>
+            <h1>CONTÁCTANOS</h1>
+          </div>
+          <!-- Name -->
+          <div>
+            <mat-form-field appearance="outline" [subscriptSizing]="'dynamic'">
+              <mat-label>Nombre</mat-label>
+              <input matInput formControlName="name" type="text" required/>
+              <mat-error> {{ getRequiredError('name') }} </mat-error>
+            </mat-form-field>
+          </div>
         
-        <div class="fixed-grid has-1-cols">
-          <div class="grid">
-            <div class="cell section-title">
-              <p><b><i>Langreo, Asturias</i></b></p>
-              <span class="address"><i>C.P 33900, C/ Torre de Abajo, 56</i></span>
-            </div>
+          <!-- Email -->
+          <div>
+            <mat-form-field appearance="outline" [subscriptSizing]="'dynamic'">
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" type="email" required/>
+              <mat-error> {{ getRequiredError('email') }} </mat-error>
+            </mat-form-field>
           </div>
-        </div>
         
-        <div class="fixed-grid has-2-cols">
-          <div class="grid">
-            <span class="cell is-col-span-2 section-title">TELÉFONO</span>
-
-            <div class="cell text-cell pointer" (click)="goToPhone('633745741')">
-              <mat-icon>phone</mat-icon>
-              <span>633745741</span>
-            </div>
-            <div class="cell text-cell pointer" (click)="goToPhone('633745741')">
-              <mat-icon>phone</mat-icon>
-              <span>633745741</span>
-            </div>
+          <!-- Phone -->
+          <div>
+            <mat-form-field appearance="outline" [subscriptSizing]="'dynamic'">
+              <mat-label class="custom-label">
+                <span>Teléfono</span>
+                <span>(Opcional)</span>
+              </mat-label>
+              <input matInput formControlName="phone" type="text"/>
+            </mat-form-field>
           </div>
-        </div>
-        <hr class="show-mobile">
-
-        <div class="fixed-grid has-1-cols-mobile has-2-cols-tablet has-2-cols-desktop has-2-cols-widescreen has-2-cols-fullhd">
-          <div class="grid">
-            <span class="cell is-col-span-tablet is-col-span-desktop is-col-span-2-widescreen is-col-span-2-fullhd section-title">
-              REDES SOCIALES</span>
-
-            <div class="cell text-cell p-0 pointer" (click)="goToEmail('ejemplo.correo@gmail.com')">
-              <mat-icon>email</mat-icon>
-              ejemplo.correo{{ '@gmail' }}.com
-            </div>
-            <div class="cell has-text-centered pointer pr-3 text-cell" (click)="goToInstagram()">
-              <mat-icon>share</mat-icon>
-              {{'@'}}jl_competicion
-            </div>
+        
+          <!-- Subject -->
+          <div>
+            <mat-form-field appearance="outline" [subscriptSizing]="'dynamic'">
+              <mat-label>Asunto</mat-label>
+              <input matInput formControlName="subject" type="text" required/>
+              <mat-error> {{ getRequiredError('subject') }} </mat-error>
+            </mat-form-field>
           </div>
-        </div>
+        
+          <!-- Message -->
+          <div>
+            <mat-form-field appearance="outline" [subscriptSizing]="'dynamic'">
+              <mat-label>Mensaje</mat-label>
+              <textarea formControlName="message" rows="7" matInput required></textarea>
+              <mat-error> {{ getRequiredError('message') }} </mat-error>
+            </mat-form-field>
 
+            <!-- Send button -->
+            <button class="button is-success is-outlined">Enviar</button>
+          </div>
+
+        </form>
       </div>
     </div>
+
+    <!-- <Footer> -->
+    <div class="padding-section">
+      <div class="footer-content"> 
+    
+        <div class="footer-section">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/politica-privacidad">Política de privacidad</a></li>
+            <li><a href="/terminos">Términos y condiciones</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contacto</h4>
+          <ul>
+            <li>
+              <a href="tel:684629261">633 745 419</a> |
+              <a href="tel:985662786">985 662 786</a>
+            </li>
+            <li><a href="mailto:ejemplo.correo@gmail.com">ejemplo.correo{{ '@gmail' }}.com</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Síguenos</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/jl_competicion/?igshid=OGQ5ZDc2ODk2ZA%3D%3Dl">
+              {{ '@' }}jl_competicion</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-copy">© 2025 Mi Sitio</div>
+
+    </div>
+
+
   </div>
+
 </div>

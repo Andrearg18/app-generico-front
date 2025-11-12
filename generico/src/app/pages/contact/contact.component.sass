@@ -1,63 +1,166 @@
-.container-page
-    height: -webkit-fill-available
-    padding: 4vh 2vh 4vh 2vh
+.wrapper 
+    background: #e7e7e7
+    height: 100vh
+    box-sizing: border-box
+    padding: 1.5vh 1.5vh 7vh 1.5vh
+    overflow-y: auto
+    padding-bottom: 0
 
-.map
-    height: 35vh
-    background-size: 180%
+mat-form-field
+    width: 100%
+
+// <Header>
+.page-header, .page-footer
+    color: white
+    display: flex
+    justify-content: center
+    align-items: center
+    text-align: center
+    font-weight: bold
+    text-shadow: 5px 0 10px #575757
+    font-size: clamp(2rem, 8vw, 6rem)
+    background-image: url('../../../assets/img/fondo.jpg')
+    background-size: cover
     background-position: center
     background-repeat: no-repeat
-    background-image: url('../../../assets/img/example-mapa.jpg')
-    box-shadow: 2px 2px 4px 2px #00000066
+    height: 35vh
+    border-radius: 2vh
 
-.container-contact
-    position: relative !important
-    background-color: #f5f5f5
-    margin: -10vh 4vw 0 4vw
-    padding: 1.5vh
-    box-shadow: 0 24px 48px #00000066, 0 32px 64px #0000004d
+// <Principal grid>
+.custom-grid-sections
+    display: grid
+    grid-template-columns: 1fr
+    .padding-section::nth-child(3) 
+        grid-column: 1 / -1
 
-.section-title
-    font-size: 25px
-    font-weight: bold
-    text-align: center
+// <Data grid>
+.custom-grid-data 
+    display: grid
+    grid-template-columns: 1fr
+    gap: 20px
+    
+    .custom-cell
+        min-width: 0
+        display: flex
+        align-items: center
+        justify-content: center
+        text-align: center
+        font-size: clamp(.8vw, 30px, 5vw)
+        mat-icon
+            margin-right: 5px
+            font-size: 1.8vw
+            width: max-content
+            height: max-content
+            margin: 6px 2px 0 0
 
-.text-cell
-    display: flex
-    align-items: center
-    justify-content: center
-    > mat-icon
-        height: auto
-        width: auto
-        margin-right: 10px
-
-hr
-    background-color: #000000
-    margin: 5px 10px 5px 10px
-.show-mobile
-    visibility: visible
-
-@media ( min-width: 700px )
-    .container-page
-        padding: 5vh !important
-    .map
-        background-size: 120%
-        @media ( min-width: 1500px )
-            background-size: 100% !important
-    .container-contact
-        margin: -5vh 10vw 0 10vw
-        padding: 1.5vh 2vh 4vh 2vh !important
+    .custom-cell:nth-child(7)
+        margin: 20px 0
+        display: block
+        text-align: center
+        
     .section-title
-        font-size: 30px
-    .text-cell
+        font-weight: bold
+        font-size: clamp(2rem, 2.5vw, 2.5rem) !important
+        
+    .custom-map
+        height: 20vh
+        min-height: 250px
+        width: 100%
+        background-size: 180%
+        background-position: center
+        background-repeat: no-repeat
+        border-radius: 5px
+        background-image: url('../../../assets/img/example-mapa.jpg')
+        cursor: pointer
+
+// <Message grid>
+.custom-grid-message
+    display: grid
+    grid-template-columns: repeat(1, 1fr)
+    gap: 40px
+    div
+        min-width: 0
+    h1
+        font-weight: bold
+        font-size: clamp(1.5rem, 2.5vw, 3rem)
+        text-align: center
+        margin-bottom: -30px
+    div button
+        width: 100%
+        margin-top: 40px
+        border: none
         font-size: 25px
-        > mat-icon
-            font-size: 40px
-    hr
-        margin: 20px 50px 20px 50px
-    .show-mobile
-        visibility: hidden
+        background-color: rgb(72, 199, 142)
+        color: white
+        height: 60px
+        &:hover
+            background-color: #e1f0e9
+            color: rgb(72, 199, 142)
+            
 
+// <Footer>
+.footer-content 
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+    gap: 1.5rem
+    background-color: #d9d9d9 !important
+    color: #393939
+    padding: 2rem
+    font-size: 0.9rem
 
-.prueba
-    border: solid red 1px
+    .footer-section h4 
+        margin-bottom: 0.5rem
+        font-size: 1rem
+        font-weight: 400
+    a:hover 
+        text-decoration: underline 
+
+.footer-copy 
+    text-align: center
+    font-size: 0.8rem
+    opacity: 0.7
+
+// Medias
+@media (min-width: 400px)
+    .custom-grid-data 
+        grid-template-columns: repeat(2, 1fr)
+        justify-content: space-evenly
+        justify-items: center
+        .custom-cell:nth-child(7), .section-title, .custom-map, .cols-email
+            grid-column: span 2
+            
+    .custom-grid-message
+        grid-template-columns: repeat(2, 1fr)
+        div:nth-child(1), div:nth-child(6), div:nth-child(7)
+            grid-column: span 2
+
+@media (min-width: 1600px)
+    .custom-grid-data .cols-email
+        grid-column: auto
+
+@media (min-width: 1120px)
+    .custom-grid-sections
+        grid-template-columns: 60% 40%
+    .custom-grid-data 
+        grid-template-columns: repeat(2, 1fr)    
+    .custom-grid-message
+        grid-template-columns: repeat(1, 1fr)
+        div:nth-child(1), div:nth-child(6)
+            grid-column: auto
+
+@media (min-width: 1300px)            
+    .custom-grid-message
+        grid-template-columns: repeat(1, 1fr)
+        div:nth-child(1), div:nth-child(6)
+            grid-column: auto
+// <>
+
+.padding-section
+    padding: 20px
+    .custom-grid-message, .custom-grid-data, .footer-content
+        padding: 40px
+        background-color: #ffffff
+        border-radius: 10px
+        height: 100%
+    &:has(.footer-content)
+        padding-bottom: 0

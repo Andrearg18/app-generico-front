@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavigationService } from '../../services/navigation.service';
+import { FormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
+import { REQUIRED_ERROR_MESSAGE } from '../../../assets/constants/literals';
 
 @Component({
   selector: 'app-contact',
@@ -11,10 +13,21 @@ export class ContactComponent {
   // center = { lat: 40.730610, lng: -73.935242 }
   // zoom = 12
   // markerPosition = { lat: 40.730610, lng: -73.935242 }
+
+  public contactForm: FormGroup
   
   constructor(
     private _navigationService: NavigationService,
-  ) {}
+    private _formBuilder: UntypedFormBuilder,
+  ) {
+    this.contactForm = this._formBuilder.group({
+      name: ['', Validators.required],
+      email: ['', Validators.required],
+      phone: [''],
+      subject: ['¡Tengo una sugerencia!', Validators.required],
+      message: ['', Validators.required]
+    })
+  }
 
   goToHome() {
     this._navigationService.goToHome()
@@ -41,5 +54,11 @@ export class ContactComponent {
 
   goBack() {
     this._navigationService.goBack()
+  }
+
+  getRequiredError(field: string): string {
+      return this.contactForm.get(field)?.hasError('required')
+        ? REQUIRED_ERROR_MESSAGE
+        : ''
   }
 }
