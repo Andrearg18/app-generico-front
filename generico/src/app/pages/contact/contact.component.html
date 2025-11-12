@@ -2,9 +2,9 @@
   <div class="page">
 
     <!-- <Header> -->
-    <div class="page-header" (click)="goToHome()">
-      <mat-icon class="go-back" (click)="goBack()">arrow_back</mat-icon>
-      <span>J.L COMPETICIÓN</span>
+    <div class="page-header" (click)="goToHome(headerSpan)">
+      <mat-icon class="go-back" (click)="goBack(headerSpan)">arrow_back</mat-icon>
+      <span #headerSpan>J.L COMPETICIÓN</span>
     </div>
 
     <!-- <Principal grid> -->
@@ -105,7 +105,13 @@
             </mat-form-field>
 
             <!-- Send button -->
-            <button class="button is-success is-outlined">Enviar</button>
+            <button class="button is-success is-outlined" 
+              [ngClass]="{'button-disabled': contactForm.invalid || waitingResponse}"
+              [disabled]="contactForm.invalid"
+              (click)="sendMessage()">
+              <span *ngIf="!waitingResponse">Enviar</span>
+              <mat-spinner *ngIf="waitingResponse" [diameter]="20"></mat-spinner>
+            </button>
           </div>
 
         </form>

@@ -13,15 +13,22 @@ export class HomeComponent {
     private _navigationService: NavigationService,
   ) {}
 
-  goToVehiculos() {
-    this._navigationService.goToVehiculos();
+  goToVehiculos(element?: HTMLElement) {
+    this._animationNavigate(() => this._navigationService.goToVehiculos(), element)
+  }
+  
+  goToRecambios(element?: HTMLElement) {
+    this._animationNavigate(() => this._navigationService.goToRecambios(), element)
+  }
+  
+  goToContact(element?: HTMLElement) {
+    this._animationNavigate(() => this._navigationService.goToContact(), element)
   }
 
-  goToRecambios() {
-    this._navigationService.goToRecambios();
-  }
-
-  goToContact() {
-    this._navigationService.goToContact();
+  private _animationNavigate(navigationFn: () => void, element?: HTMLElement): void {
+    if(element) {
+      element.classList.add('clicked');
+    }
+    setTimeout(() => navigationFn(), 100);
   }
 }

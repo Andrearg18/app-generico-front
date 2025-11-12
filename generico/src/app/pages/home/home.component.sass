@@ -91,3 +91,45 @@
         padding: 10px 20px
         div
             width: auto
+
+// Animations
+@keyframes zoomIn
+  0%
+    transform: scale(0.95)
+    opacity: 0
+  100%
+    transform: scale(1)
+    opacity: 1
+
+.page-header
+  animation: zoomIn 0.8s ease forwards
+
+@keyframes fadeInUp
+  0%
+    opacity: 0
+    transform: translateY(30px)
+  100%
+    opacity: 1
+    transform: translateY(0)
+
+.custom-grid-options div
+  opacity: 0
+  animation: fadeInUp 0.6s ease forwards
+
+  &:nth-child(1)
+    animation-delay: 0.2s
+  &:nth-child(2)
+    animation-delay: 0.4s
+  &:nth-child(3)
+    animation-delay: 0.6s
+
+@keyframes slideOutLeft
+  0%
+    opacity: 1
+    transform: translateX(0)
+  100%
+    opacity: 0
+    transform: translateX(-100px)
+
+.custom-grid-options div.clicked
+  animation: slideOutLeft 0.3s ease forwards

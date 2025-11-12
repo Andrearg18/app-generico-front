@@ -15,6 +15,8 @@ export class ContactComponent {
   // markerPosition = { lat: 40.730610, lng: -73.935242 }
 
   public contactForm: FormGroup
+
+  public waitingResponse = false
   
   constructor(
     private _navigationService: NavigationService,
@@ -29,8 +31,8 @@ export class ContactComponent {
     })
   }
 
-  goToHome() {
-    this._navigationService.goToHome()
+  goToHome(element: HTMLElement) {
+    this._animationNavigate(() => this._navigationService.goToHome(), element)
   }
 
   goToInstagram() {
@@ -52,13 +54,25 @@ export class ContactComponent {
     this._navigationService.goToEmail(email, '', '')
   }
 
-  goBack() {
-    this._navigationService.goBack()
+  goBack(element: HTMLElement) {
+    this._animationNavigate(() => this._navigationService.goBack(), element)
   }
 
   getRequiredError(field: string): string {
       return this.contactForm.get(field)?.hasError('required')
         ? REQUIRED_ERROR_MESSAGE
         : ''
+  }
+
+  sendMessage(): void {
+    console.log('entra')
+    this.waitingResponse = true
+  }
+
+  private _animationNavigate(navigationFn: () => void, element?: HTMLElement): void {
+    if(element) {
+      element.classList.add('clicked')
+    }
+    setTimeout(() => navigationFn(), 100)
   }
 }
