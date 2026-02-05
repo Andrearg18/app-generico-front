@@ -8,8 +8,11 @@
       <span>J.L COMPETICIÓN</span>
     </div>
 
-    <div class="container-page" [ngClass]="{'height-page': vehiculosList.length < 4}">
-      <div class="header fixed-grid has-3-cols">
+    <div
+      class="container-page"
+      [ngClass]="{ 'height-page': vehiculosList.length < 4 }"
+    >
+      <!--<div class="header fixed-grid has-3-cols">
         <div class="grid">
           <div class="cell go-back">
             <mat-icon class="pointer" (click)="goBack()">arrow_back</mat-icon>
@@ -27,17 +30,27 @@
             </button>
           </div>
         </div>
-      </div>
-      
+      </div> -->
+
       <div class="vehiculos">
         <div *ngIf="loading" class="spinner">
-          <mat-progress-spinner mode="indeterminate" diameter="50" strokeWidth="10"></mat-progress-spinner>
+          <mat-progress-spinner
+            mode="indeterminate"
+            diameter="50"
+            strokeWidth="10"
+          ></mat-progress-spinner>
         </div>
 
-        <ng-container *ngIf="!loading && vehiculosFiltered.length > 0; else noVehiculos">
-          <div class="vehiculo" *ngFor="let vehiculo of vehiculosFiltered" (click)="goToVehiculoDetail(vehiculo.code)">
+        <ng-container
+          *ngIf="!loading && vehiculosFiltered.length > 0; else noVehiculos"
+        >
+          <div
+            class="vehiculo"
+            *ngFor="let vehiculo of vehiculosFiltered"
+            (click)="goToVehiculoDetail(vehiculo.code)"
+          >
             <app-item-vehiculo [vehiculo]="vehiculo"></app-item-vehiculo>
-            <hr class="hr-card">
+            <hr class="hr-card" />
           </div>
         </ng-container>
 
@@ -54,11 +67,11 @@
               </div>
               <div class="cell">
                 <mat-icon>share</mat-icon>
-                <span>{{'@'}}jl_competicion</span>
+                <span>{{ "@" }}jl_competicion</span>
               </div>
               <div class="cell">
                 <mat-icon>share</mat-icon>
-                <span>{{'@'}}jl_competicion</span>
+                <span>{{ "@" }}jl_competicion</span>
               </div>
               <div class="cell">
                 <mat-icon>phone</mat-icon>
@@ -66,7 +79,7 @@
               </div>
               <div class="cell is-col-span-2">
                 <mat-icon>email</mat-icon>
-                <span>ejemplo.correo{{ '@gmail' }}.com</span>
+                <span>ejemplo.correo{{ "@gmail" }}.com</span>
               </div>
             </div>
           </div>

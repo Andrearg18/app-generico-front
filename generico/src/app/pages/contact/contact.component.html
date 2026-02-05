@@ -1,9 +1,10 @@
 <div class="wrapper">
   <div class="page">
-
     <!-- <Header> -->
     <div class="page-header" (click)="goToHome(headerSpan)">
-      <mat-icon class="go-back" (click)="goBack(headerSpan)">arrow_back</mat-icon>
+      <mat-icon class="go-back" (click)="goBack(headerSpan)"
+        >arrow_back</mat-icon
+      >
       <span #headerSpan>J.L COMPETICIÓN</span>
     </div>
 
@@ -24,33 +25,41 @@
             <span>684629261</span>
           </div>
 
-          <span class="custom-cell section-title">
-            REDES SOCIALES</span>
-      
-          <div class="custom-cell cols-email pointer" (click)="goToEmail('ejemplo.correo@gmail.com')">
+          <span class="custom-cell section-title"> REDES SOCIALES</span>
+
+          <div
+            class="custom-cell cols-email pointer"
+            (click)="goToEmail('ejemplo.correo@gmail.com')"
+          >
             <mat-icon>email</mat-icon>
-            <span>ejemplo.correo{{ '@gmail' }}.com</span>
+            <span>ejemplo.correo{{ "@gmail" }}.com</span>
           </div>
 
           <div class="custom-cell cols-email pointer" (click)="goToInstagram()">
             <mat-icon>share</mat-icon>
-            <span>{{'@'}}jl_competicion</span>
+            <span>{{ "@" }}jl_competicion</span>
           </div>
 
           <div class="custom-cell">
-            <p><i><b>Langreo, Asturias</b></i></p>
+            <p>
+              <i><b>Langreo, Asturias</b></i>
+            </p>
             <p><i>C.P 33900, C/ Torre de Abajo, 56</i></p>
           </div>
-          
-          <div class="custom-cell custom-map" (click)="goToMaps()"
-            matTooltip="Abrir en google maps" matTooltipPosition="below">
+
+          <div
+            class="custom-cell custom-map"
+            (click)="goToMaps()"
+            matTooltip="Abrir en google maps"
+            matTooltipPosition="below"
+          >
             <!--<google-map width="100%" height="400px" [center]="center" [zoom]="zoom">
               <map-marker [position]="markerPosition"></map-marker>
             </google-map>-->
           </div>
         </div>
       </div>
-      
+
       <!-- <Message grid> -->
       <div class="padding-section">
         <form [formGroup]="contactForm" class="custom-grid-message">
@@ -62,20 +71,20 @@
           <div>
             <mat-form-field appearance="outline" [subscriptSizing]="'dynamic'">
               <mat-label>Nombre</mat-label>
-              <input matInput formControlName="name" type="text" required/>
-              <mat-error> {{ getRequiredError('name') }} </mat-error>
+              <input matInput formControlName="name" type="text" required />
+              <mat-error> {{ getRequiredError("name") }} </mat-error>
             </mat-form-field>
           </div>
-        
+
           <!-- Email -->
           <div>
             <mat-form-field appearance="outline" [subscriptSizing]="'dynamic'">
               <mat-label>Email</mat-label>
-              <input matInput formControlName="email" type="email" required/>
-              <mat-error> {{ getRequiredError('email') }} </mat-error>
+              <input matInput formControlName="email" type="email" required />
+              <mat-error> {{ getRequiredError("email") }} </mat-error>
             </mat-form-field>
           </div>
-        
+
           <!-- Phone -->
           <div>
             <mat-form-field appearance="outline" [subscriptSizing]="'dynamic'">
@@ -83,78 +92,55 @@
                 <span>Teléfono</span>
                 <span>(Opcional)</span>
               </mat-label>
-              <input matInput formControlName="phone" type="text"/>
+              <input matInput formControlName="phone" type="text" />
             </mat-form-field>
           </div>
-        
+
           <!-- Subject -->
           <div>
             <mat-form-field appearance="outline" [subscriptSizing]="'dynamic'">
               <mat-label>Asunto</mat-label>
-              <input matInput formControlName="subject" type="text" required/>
-              <mat-error> {{ getRequiredError('subject') }} </mat-error>
+              <input matInput formControlName="subject" type="text" required />
+              <mat-error> {{ getRequiredError("subject") }} </mat-error>
             </mat-form-field>
           </div>
-        
+
           <!-- Message -->
           <div>
             <mat-form-field appearance="outline" [subscriptSizing]="'dynamic'">
               <mat-label>Mensaje</mat-label>
-              <textarea formControlName="message" rows="7" matInput required></textarea>
-              <mat-error> {{ getRequiredError('message') }} </mat-error>
+              <textarea
+                formControlName="message"
+                rows="7"
+                matInput
+                required
+              ></textarea>
+              <mat-error> {{ getRequiredError("message") }} </mat-error>
             </mat-form-field>
 
             <!-- Send button -->
-            <button class="button is-success is-outlined" 
-              [ngClass]="{'button-disabled': contactForm.invalid || waitingResponse}"
+            <button
+              class="button is-success is-outlined"
+              [ngClass]="{
+                'button-disabled': contactForm.invalid || waitingResponse,
+              }"
               [disabled]="contactForm.invalid"
-              (click)="sendMessage()">
+              (click)="sendMessage()"
+            >
               <span *ngIf="!waitingResponse">Enviar</span>
-              <mat-spinner *ngIf="waitingResponse" [diameter]="20"></mat-spinner>
+              <mat-spinner
+                *ngIf="waitingResponse"
+                [diameter]="20"
+              ></mat-spinner>
             </button>
           </div>
-
         </form>
       </div>
     </div>
 
     <!-- <Footer> -->
     <div class="padding-section">
-      <div class="footer-content"> 
-    
-        <div class="footer-section">
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="/politica-privacidad">Política de privacidad</a></li>
-            <li><a href="/terminos">Términos y condiciones</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h4>Contacto</h4>
-          <ul>
-            <li>
-              <a href="tel:684629261">633 745 419</a> |
-              <a href="tel:985662786">985 662 786</a>
-            </li>
-            <li><a href="mailto:ejemplo.correo@gmail.com">ejemplo.correo{{ '@gmail' }}.com</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-section">
-          <h4>Síguenos</h4>
-          <ul>
-            <li><a href="https://www.instagram.com/jl_competicion/?igshid=OGQ5ZDc2ODk2ZA%3D%3Dl">
-              {{ '@' }}jl_competicion</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-copy">© 2025 Mi Sitio</div>
-
+      <app-footer></app-footer>
     </div>
-
-
   </div>
-
 </div>

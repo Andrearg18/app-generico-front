@@ -5,7 +5,9 @@
       <span>Tienda de recambios y accesorios para vehículos</span>
     </div>
 
-    <div class="is-flex is-align-items-center custom-is-align-items-end is-justify-content-center">
+    <div
+      class="is-flex is-align-items-start custom-is-align-items-end is-justify-content-center"
+    >
       <div class="custom-grid-options">
         <div #vehiculosDiv (click)="goToVehiculos(vehiculosDiv)">
           <mat-icon>time_to_leave</mat-icon>
@@ -15,12 +17,11 @@
           <mat-icon>hardware</mat-icon>
           <span>Recambios</span>
         </div>
-        <div #contactDiv (click)="goToContact(contactDiv)"> 
+        <div #contactDiv (click)="goToContact(contactDiv)">
           <mat-icon>support_agent</mat-icon>
           <span>Contacto</span>
         </div>
       </div>
-      
-   </div>
+    </div>
   </div>
 </div>

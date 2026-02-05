@@ -3,7 +3,6 @@ import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './pages/home/home.module';
-import { ContactModule } from './pages/contact/contact.module';
 import { VehiculosModule } from './pages/vehiculos/vehiculos.module';
 import { RecambiosModule } from './pages/recambios/recambios.module';
 import { VehiculoDetailModule } from './components/vehiculo-detail/vehiculo-detail.module';
@@ -14,8 +13,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
+import { FooterComponent } from './components/footer/footer.component';
+import { ContactModule } from './pages/contact/contact.module';
 
-const ANGULAR_MATEIRAL =[
+const ANGULAR_MATEIRAL = [
   MatFormFieldModule,
   MatInputModule,
   MatButtonModule,
@@ -26,19 +27,21 @@ const ANGULAR_MATEIRAL =[
   declarations: [
     AppComponent,
     FiltersVehiculoComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HomeModule,
-    ContactModule,
-    VehiculosModule,
-    RecambiosModule,
-    VehiculoDetailModule,
-    RecambioDetailModule,
-    ReactiveFormsModule,
+    // ContactModule,
+    // VehiculosModule,
+    // RecambiosModule,
+    // VehiculoDetailModule,
+    // RecambioDetailModule,
+    // ReactiveFormsModule,
     ANGULAR_MATEIRAL,
   ],
+  exports: [FooterComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

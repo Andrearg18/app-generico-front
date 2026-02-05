@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressSpinner } from "@angular/material/progress-spinner";
+import { AppModule } from "../../app.module";
 
 
 const ANGULAR_MATERIAL = [
@@ -18,6 +19,7 @@ const ANGULAR_MATERIAL = [
   MatLabel,
   MatFormFieldModule,
   MatInputModule,
+  MatProgressSpinner,
   MatProgressSpinner
 ]
 
@@ -32,9 +34,10 @@ const ANGULAR_MATERIAL = [
     ReactiveFormsModule,
     GoogleMap,
     BrowserAnimationsModule,
-    MatProgressSpinner
-],
-  providers: [NavigationService], 
+    AppModule
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [NavigationService],
   exports: [ContactComponent]
 })
 export class ContactModule { }
