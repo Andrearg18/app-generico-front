@@ -6,20 +6,18 @@
     </div>
 
     <div
+      #optionsContainer
       class="is-flex is-align-items-start custom-is-align-items-end is-justify-content-center"
     >
       <div class="custom-grid-options">
-        <div #vehiculosDiv (click)="goToVehiculos(vehiculosDiv)">
-          <mat-icon>time_to_leave</mat-icon>
-          <span>Vehículos</span>
+        <div (click)="goToVehiculos(optionsContainer)">
+          <mat-icon>time_to_leave</mat-icon> <span>Vehículos</span>
         </div>
-        <div #recambiosDiv (click)="goToRecambios(recambiosDiv)">
-          <mat-icon>hardware</mat-icon>
-          <span>Recambios</span>
+        <div (click)="goToRecambios(optionsContainer)">
+          <mat-icon>hardware</mat-icon> <span>Recambios</span>
         </div>
-        <div #contactDiv (click)="goToContact(contactDiv)">
-          <mat-icon>support_agent</mat-icon>
-          <span>Contacto</span>
+        <div (click)="goToContact(optionsContainer)">
+          <mat-icon>support_agent</mat-icon> <span>Contacto</span>
         </div>
       </div>
     </div>
